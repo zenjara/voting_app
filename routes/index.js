@@ -22,11 +22,21 @@ router.post("/register",function(req,res){
             console.log(err);
         }else{
             passport.authenticate("local")(req,res,function(){
-                res.redirect("index");
+                res.redirect("/index");
             });
             
         }
     });
 });
+// LOGIN routes
+router.get("/login",function(req, res) {
+    res.render("login");
+});
+router.post("/login",passport.authenticate("local",{
+       successRedirect: "/index",
+       failureRedirect: "/login"
+    }),function(req,res){
+        
+    });
 
 module.exports=router;
