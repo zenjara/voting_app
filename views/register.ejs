@@ -1,0 +1,12 @@
+<%include ./partials/header.ejs%>
+    <h1>Register new account</h1>
+    
+    <form method="POST" action="/register">
+        <input type="text" placeholder="Enter your name" name="name">
+        <input type="text" placeholder="Enter your email" name="email">
+        <input type="password" placeholder="Enter your password" name="password">
+        <button class="btn btn-success">Submit</button>
+    </form>
+    
+    
+<%include ./partials/footer.ejs%>
